@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="es">
+    <head>
+        <title>Esto es un ejemplo</title>
+        <script src="https://cdn.jsdelivr.net/npm/p5@1.2.0/lib/p5.min.js"></script>
+        <script>
+            function setup() {
+                createCanvas(windowWidth - 40, windowHeight - 40).position(20, 20).style('z-index',-1);
+                var saluda = "holi ketal";
+                background(189, 233, 239);
+                console.log(saluda);
+                fill(199, 171, 250)
+                noStroke()  
+
+            }
+            function draw() {
+               
+                ellipse(mouseX, mouseY, 40,40)
+            }
+            function windowResized() { 
+                resizeCanvas(windowWidth - 40, windowHeight - 40);
+            } 
+        </script>
+    </head>
+    <body></body>
+</html>

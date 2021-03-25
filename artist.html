@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="description" content="Diseño y nuevos medios, segunda versión remota">
+        <title>&#127850; DNO037vR2 &#127850;</title>
+
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Dela+Gothic+One&display=swap" rel="stylesheet">
+        <link href="style.css" rel="stylesheet" />
+    </head>
+
+    <body>
+          <main>
+            <figure>
+                <img src="my_art.PNG">
+                <figcaption>Es Darwin de Gumball :~)</figcaption>
+            </figure>
+        </main>
+
+        <footer>
+            <div id="back"><a href="index.html">back</a></div>
+            <div id="controles"></div>
+            <div id="print"><a href="#" id="aqui">download</a></div>
+        </footer>
+        <script src="https://cdn.jsdelivr.net/npm/p5@1.2.0/lib/p5.min.js"></script>
+        <script>
+            function setup() {
+                var d = select("#aqui");
+                d.mousePressed(artemania);
+                createCanvas(windowWidth, windowHeight).position(0, 0).style("z-index", -1);
+             
+                elColor = createColorPicker("#777777").parent("controles");
+                elSlider = createSlider(1, 7, 4).parent("controles");
+            }
+            function draw() {
+                stroke(elColor.color());
+                strokeWeight(elSlider.value());
+                if (mouseIsPressed) {
+                    line(pmouseX, pmouseY, mouseX, mouseY);
+                }
+            }
+
+            function artemania() {
+                saveCanvas("my_art", "PNG");
+            }
+        </script>
+    </body>
+</html>
